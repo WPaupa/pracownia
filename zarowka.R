@@ -65,7 +65,7 @@ ggplot() +
 df2 <- read.csv('B.csv')
 colnames(df2) <- c('U0', 'U00', 'UR0', 'U0t', 'URt', 't', 'Rw0', 'Rwt', 'Tt', 'Tt2', 'p')
 df2 <- data.frame(sapply(df2, function(col) as.numeric(gsub(",", ".", col))))
-
+df2$Tt = 1 / (7.1 * 0.0045) * (df2$Rwt - 7.1) / df2$t
 df2$T1 <- ((df2$Rwt / R0) - 1) / alphaR + T0 
 df2$DeltaT1 <- df2$Rwt / alphaR * R0e / (R0 ^ 2)
 
