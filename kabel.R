@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 setwd('C:/Users/wosio/Documents/pracownia')
+=======
+setwd('C:/Users/wojciech/Documents/pracownia')
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
 library(ggplot2)
 library(dplyr)
 library(tikzDevice)
 library(chemCal)
 library(metafor)
+<<<<<<< HEAD
 library(grid)
 library(gridExtra)
 library(lattice)
+=======
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
 
 df = data.frame(x = c(20, 40, 60, 80, 85))
 df$y = c(9, 158, 243, 323, 342)
@@ -16,9 +23,15 @@ df$ymin = df$y - 8
 df$ymax = df$y + 8
 df$zmin = df$z - 8
 df$zmax = df$z + 8
+<<<<<<< HEAD
 plot1 <- ggplot(df) + 
   geom_point(aes(x = x, y = y), color="blue", size=3) + 
   geom_point(aes(x = x, y = z), color="red", size=3) + 
+=======
+ggplot(df) + 
+  geom_point(aes(x = x, y = y), color="blue") + 
+  geom_point(aes(x = x, y = z), color="red") + 
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
   geom_errorbar(aes(x = x, y = y, ymin = ymin, ymax = ymax, width=0.5), color = "blue") +
   geom_errorbar(aes(x = x, y = z, ymin = zmin, ymax = zmax, width=0.5), color = "red") +
   geom_smooth(aes(x = x, y = y), method="lm", color="blue") + 
@@ -28,9 +41,16 @@ plot1 <- ggplot(df) +
   theme_bw()+
   theme(legend.position="right",
         legend.key.height=unit(2,"lines"),
+<<<<<<< HEAD
         legend.title=element_text(size=rel(1.3)),
         legend.text=element_text(size=rel(1.5)),
         axis.text.y=element_text(hjust=0.5),
+=======
+        legend.title=element_text(size=rel(0.8)),
+        legend.text=element_text(size=rel(1.3)),
+        axis.text.y=element_text(angle=90, 
+                                 hjust=0.5),
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
         axis.text=element_text(size=rel(1.5)),
         axis.title=element_text(size=rel(1.5)),
         plot.caption = element_text(hjust=0.5, size=rel(1.2))
@@ -47,9 +67,15 @@ df2$ymin = df2$y - 8
 df2$ymax = df2$y + 8
 df2$zmin = df2$z - 8
 df2$zmax = df2$z + 8
+<<<<<<< HEAD
 plot2 <- ggplot(df2) + 
   geom_point(aes(x = x, y = y), color="blue", size=3) + 
   geom_point(aes(x = x, y = z), color="red", size=3) + 
+=======
+ggplot(df2) + 
+  geom_point(aes(x = x, y = y), color="blue") + 
+  geom_point(aes(x = x, y = z), color="red") + 
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
   geom_errorbar(aes(x = x, y = y, ymin = ymin, ymax = ymax, width=0.5), color = "blue") +
   geom_errorbar(aes(x = x, y = z, ymin = zmin, ymax = zmax, width=0.5), color = "red") +
   geom_smooth(aes(x = x, y = y), method="lm", color="blue") + 
@@ -59,24 +85,39 @@ plot2 <- ggplot(df2) +
   theme_bw()+
   theme(legend.position="right",
         legend.key.height=unit(2,"lines"),
+<<<<<<< HEAD
         legend.title=element_text(size=rel(1.3)),
         legend.text=element_text(size=rel(1.5)),
         axis.text.y=element_text(hjust=0.5),
+=======
+        legend.title=element_text(size=rel(0.8)),
+        legend.text=element_text(size=rel(1.3)),
+        axis.text.y=element_text(angle=90, 
+                                 hjust=0.5),
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
         axis.text=element_text(size=rel(1.5)),
         axis.title=element_text(size=rel(1.5)),
         plot.caption = element_text(hjust=0.5, size=rel(1.2))
   )
 
+<<<<<<< HEAD
 grid.arrange(plot1, plot2, ncol=2)
 
+=======
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
 df3 = data.frame(x = c(300.5, 255.8, 211.5, 184.3, 158.6, 119, 88.8, 52.8, 36.9, 9.1))
 df3$v <- c(1.44, 1.38, 1.26, 1.22, 1.08, 0.82, 0.56, 0.04, -0.31, -1.49)
 
 df4 <- data.frame(x = c(9.2, 36.5, 53.4, 82.2, 110.1, 137.7, 168, 198.7, 254, 305))
 df4$v = c(-0.94, -0.54, -0.32, -0.08, 0.14, 0.24, 0.34, 0.48, 0.58, 0.66)
 
+<<<<<<< HEAD
 U0 <- 2.5
   
+=======
+U0 <- 
+
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
 ggplot() + 
   geom_point(df4, mapping=aes(x = x, y = v), color="black", shape="square", size=5) + 
   geom_smooth(df4, mapping=aes(x = x, y = v),color="black", method="nls", formula=y~ U0 * (a - x) / (a + x), 
@@ -91,6 +132,7 @@ ggplot() +
   theme_bw()+
   theme(legend.position="right",
         legend.key.height=unit(2,"lines"),
+<<<<<<< HEAD
         legend.title=element_text(size=rel(1.5)),
         legend.text=element_text(size=rel(1.8)),
         axis.text.y=element_text(hjust=0.5),
@@ -98,3 +140,13 @@ ggplot() +
         axis.title=element_text(size=rel(2)),
         plot.caption = element_text(hjust=0.5, size=rel(1.2))
   )
+=======
+        legend.title=element_text(size=rel(0.8)),
+        legend.text=element_text(size=rel(1.3)),
+        axis.text.y=element_text(angle=90, 
+                                 hjust=0.5),
+        axis.text=element_text(size=rel(1.5)),
+        axis.title=element_text(size=rel(1.5)),
+        plot.caption = element_text(hjust=0.5, size=rel(1.2))
+  )
+>>>>>>> 321241772b6c43e6122aed6d95e1f8b3e6df43eb
